@@ -1,7 +1,7 @@
 # xcb-handmade
 A adaptation of some of the [handmade hero's](https://handmadehero.org/) platform layer, properly organized by day
 
-# in-depth-explanation
+# in-depth-code-explanation
 [Day-1](nothing-here)
 
 # warnings
