@@ -1,8 +1,8 @@
 # xcb-handmade
 A adaptation of some of the [handmade hero's](https://handmadehero.org/) platform layer, properly organized by day
 
-# in-depth-code-explanation
-[Day-1](nothing-here)
+# in-video-code-explanation
+[Day-1](https://www.youtube.com/watch?v=UwOS5LXQ3z0)
 
 # warnings
   1.The project does not include any of the original source code, it only include platform and script files<br>
