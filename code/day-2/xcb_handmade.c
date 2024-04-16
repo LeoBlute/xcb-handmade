@@ -27,7 +27,7 @@ int main() {
       //TODO(LAG): Log error
    }
 
-   xcb_screen_t* _screen = xcb_screen_t* _screen = xcb_setup_roots_iterator(xcb_get_setup(_connection)).data;;
+   xcb_screen_t* _screen = xcb_setup_roots_iterator(xcb_get_setup(_connection)).data;;
 
    uint32_t _mask = XCB_CW_EVENT_MASK;
    uint32_t _values[] = {XCB_EVENT_MASK_EXPOSURE};
