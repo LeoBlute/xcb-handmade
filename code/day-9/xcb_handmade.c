@@ -41,7 +41,6 @@ typedef struct alsa_sound_output {
    int bytes_per_sample;
    int tone_hz;
    int tone_volume;
-   u32 running_sample_index;
    int wave_period;
    s16* samples_buffer;
    f32 tsine;
@@ -67,14 +66,12 @@ alsa_fill_sound_buffer(alsa_sound_output* sound_output, int samples_to_write) {
    s16* sample_out = sound_output->samples_buffer;
 
    for(int i=0; i<samples_to_write; ++i) {
-      // f32 t = 2.0f*PI32*(f32)sound_output->running_sample_index / (f32)sound_output->wave_period;
       f32 sine_value = sinf(sound_output->tsine);
       s16 sample_value = (s16)(sine_value * sound_output->tone_volume);
       *sample_out++ = sample_value;
       *sample_out++ = sample_value;
 
       sound_output->tsine += 2.0f*PI32*1.0f / (f32)sound_output->wave_period;
-      ++sound_output->running_sample_index;
    }
 
    int result;
@@ -298,7 +295,6 @@ int main() {
    sound_output.bytes_per_sample = 2 * sizeof(s16);
    sound_output.tone_hz = 256;
    sound_output.tone_volume = 3000;
-   sound_output.running_sample_index;
    sound_output.wave_period = sound_output.samples_per_second/sound_output.tone_hz;
    sound_output.tsine = 0.0f;
    sound_output.samples_buffer = mmap(0,
